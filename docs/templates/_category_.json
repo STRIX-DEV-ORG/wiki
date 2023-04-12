@@ -1,0 +1,8 @@
+{
+  "label": "Templates",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "If you ever need to create any artifact, you shoud first come here and check if there is already a template for it."
+  }
+}

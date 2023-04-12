@@ -4,6 +4,8 @@
 
 Create a standarized template for any template creation.
 
+## Content
+
 ```md
 # TMP - <Template title>
 
