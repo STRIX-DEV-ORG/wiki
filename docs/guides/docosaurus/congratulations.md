@@ -4,9 +4,9 @@ sidebar_position: 7
 
 # Congratulations!
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+You have just learned the **basics of how to modify the documentation**.
 
-Docusaurus has **much more to offer**!
+The tool that has been used to create this wiki is Docusaurus and it has **much more to offer**!
 
 ## What's next?
 

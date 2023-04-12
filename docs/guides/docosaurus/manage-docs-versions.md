@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Manage Docs Versions
 
-Docusaurus can manage multiple versions of your docs.
+You can manage multiple versions of your docs.
 
 ## Create a docs version
 
