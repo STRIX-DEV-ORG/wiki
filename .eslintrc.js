@@ -3,4 +3,5 @@ module.exports = {
   rules: {
     'comma-dangle': ['error', 'only-multiline'],
   },
+  ignorePatterns: ['build/'],
 };
