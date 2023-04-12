@@ -70,7 +70,7 @@ const config = {
           },
           { to: '/blog', label: 'News', position: 'left' },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/STRIX-DEV-ORG',
             label: 'GitHub',
             position: 'right',
           },
