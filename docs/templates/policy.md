@@ -13,10 +13,6 @@ Create a standarized template for any policy creation.
 
 What is this policy intended for?
 
-## Scope
-
-Who is this policy intended for?
-
 ## Content
 
 Describe all the policy contents, create any section if required by using the correct md or mdx sintax.
