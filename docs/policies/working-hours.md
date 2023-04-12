@@ -4,10 +4,6 @@
 
 To establish the standards and procedures to regulate the working hours of the STRIXDEV collaborators.
 
-## Scope
-
-All STRIXDEV collaborators.
-
 ## Content
 
 ### General Principles
