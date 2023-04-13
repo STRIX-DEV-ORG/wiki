@@ -111,3 +111,7 @@ h6 {
   font-family: var(--ifm-font-family-monospace);
   letter-spacing: 1.2px;
 }
+
+code, pre, kbd {
+  font-family: var(--ifm-font-family-base);
+}
