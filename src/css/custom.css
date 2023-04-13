@@ -1,3 +1,5 @@
+@import url('./fonts/stylesheet.css');
+
 :root {
   --ifm-color-scheme: light;
 
@@ -39,13 +41,13 @@
   --ifm-color-content-secondary: var(--ifm-color-secondary);
 
   /* Typography. */
-  --ifm-font-family-base: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
+  --ifm-font-family-base: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
     'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
-  --ifm-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  --ifm-font-family-monospace: 'Iceland', SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
 
-  --ifm-heading-font-family: var(--ifm-font-family-base);
+  --ifm-heading-font-family: var(--ifm-font-family-monospace);
 
   /* Scrollbar Rules. */
   --ifm-scrollbar-size: 5px;
@@ -90,8 +92,22 @@
   --docusaurus-highlighted-code-line-bg: var(--ifm-color-gray-800);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 1.2px;
+}
+
 .button.button--primary,
 .button.button--secondary,
 .button.button--info {
   color: var(--ifm-color-white)
+}
+
+.navbar__title {
+  font-family: var(--ifm-font-family-monospace);
+  letter-spacing: 1.2px;
 }
