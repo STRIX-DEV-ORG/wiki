@@ -13,6 +13,10 @@ Create a standarized template for any process creation.
 
 What is this process intended for?
 
+## Input
+
+Describes what the process input will be
+
 ## Procedure
 
 | Phase      | Description                                  | Responsibles                               | 
@@ -20,6 +24,10 @@ What is this process intended for?
 | Phase name | Describes what should be done in this phase  | List all the responsibles for this phase   |
 | ---------- | -------------------------------------------- | ------------------------------------------ | 
 | Phase name | Describes what should be done in this phase  | List all the responsibles for this phase   |
+
+## Output
+
+Describe what the outcome of the process will be
 
 ## Versions
 
@@ -30,6 +38,8 @@ What is this process intended for?
 
 ## Versions
 
-| Version | Description       | Responsibles                     | Date       |
-| ------- | ----------------- | -------------------------------- | ---------- |
-| 1.0     | Template creation | Erick Eduardo Avalos Riveros     | 12/04/2023 |
+| Version | Description            | Responsibles                     | Date       |
+| ------- | ---------------------- | -------------------------------- | ---------- |
+| 1.0     | Template creation      | Erick Eduardo Avalos Riveros     | 12/04/2023 |
+| ------- | ---------------------- | -------------------------------- | ---------- |
+| 1.0     | add inputs and outputs | Erick Eduardo Avalos Riveros     | 27/04/2023 |
