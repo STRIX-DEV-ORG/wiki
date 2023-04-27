@@ -42,4 +42,4 @@ Describe what the outcome of the process will be
 | ------- | ---------------------- | -------------------------------- | ---------- |
 | 1.0     | Template creation      | Erick Eduardo Avalos Riveros     | 12/04/2023 |
 | ------- | ---------------------- | -------------------------------- | ---------- |
-| 1.0     | add inputs and outputs | Erick Eduardo Avalos Riveros     | 27/04/2023 |
+| 1.1     | Add inputs and outputs | Erick Eduardo Avalos Riveros     | 27/04/2023 |

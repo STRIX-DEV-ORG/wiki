@@ -24,18 +24,21 @@
 |             | - Register those responsible for each activity of the day in the earned value plan       | Team lead    |
 |             | - Record the blockage and assign another colleague to help solve it                      | Team lead    |
 | ----------- | ---------------------------------------------------------------------------------------- | ------------ |
-| Evaluation  | - Exposing the project status graphs, and analyze the feasibility of the current way of  | Team lead    |
+| Evaluation  | - Expose the project status graphs, and analyze the feasibility of the current way of    | Team lead    |
 |             |   working, the graphs are:                                                               |              |
 |             |     * CPI and SPI trends                                                                 |              |
 |             |     * Daily meeting time                                                                 |              |
 | ----------- | ---------------------------------------------------------------------------------------- | ------------ |
-| continuous  | - Based on the graphs of the previous phase, each member can contribute 1 idea on how to | Work team    |
-| improvement |   improve performance                                                                    |              |
+| Reset       | - In case the project does not go according to plan, the earned value plan should be     | Team lead    |
+|             |   adjusted.                                                                              |              |
+| ----------- | ---------------------------------------------------------------------------------------- | ------------ |
+| Continuous  | - Based on the graphs from the previous phase, each member can provide some idea on how  | Work team    |
+| improvement |   to improve performance                                                                 |              |
 |             | - Record improvement proposals                                                           | Team lead    |
 |             | - Question the usefulness of the value propositions, if they are considered optimal,     | Team lead    | 
 |             |   they should be presented at the next meeting                                           |              | 
 | ----------- | ---------------------------------------------------------------------------------------- | ------------ |
-| CLOSING     | - The coordination meeting is concluded and if the team goes according to plan,          | Team lead    | 
+| Closing     | - The coordination meeting is concluded and if the team goes according to plan,          | Team lead    | 
 |             |   congratulate the members for their good performance                                    |              | 
 | ----------- | ---------------------------------------------------------------------------------------- | ------------ |
 
