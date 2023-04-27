@@ -7,8 +7,6 @@ Establish the rules that STRIXDEV must follow when handling information about th
 
 ## Content
 
-- When a new repository is created, it must be private and only the development team will have access to it.
-
 - Project database credentials cannot be shared with members outside of the development team.
 
 - Database credentials should not be uploaded to repositories.
@@ -24,3 +22,5 @@ Establish the rules that STRIXDEV must follow when handling information about th
 | Version | Description                             | Responsibles                               | Date       |
 | ------- | --------------------------------------- | ------------------------------------------ | ---------- |
 | 1.0     | Creation of privacy policy              | Erick Eduardo Avalos Riveros               | 17/04/2023 |
+| ------- | --------------------------------------- | ------------------------------------------ | ---------- |
+| 1.1     | Remove a clause                         | Erick Eduardo Avalos Riveros               | 27/04/2023 |
