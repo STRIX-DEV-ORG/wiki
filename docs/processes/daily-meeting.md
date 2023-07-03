@@ -14,6 +14,7 @@
 | ----------- | ---------------------------------------------------------------------------------------- | --------------- | 
 | Preparation | - Send a message five minutes before the start of the daily meeting, requesting to       | Project manager |
 |             |   confirm your attendance                                                                |                 |
+|             | - Join the General voice channel on maneroto's server                                    | Work team       |
 |             | - Present the earned value plan to collaborators                                         | Project manager |
 |             | - Establish a timer of 10 minutes, in which the daily coordination meeting must conclude | Project manager |
 | ----------- | ---------------------------------------------------------------------------------------- | --------------- |
