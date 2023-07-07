@@ -6,58 +6,39 @@
 
 ## Input
 
-- Suggestions of points to discuss with stakeholders
+- Situation to be solved or that needs to be transmitted to the stakeholder
 
 ## Procedure
 
-| Phase       | Description                                                                              | Responsibles  | 
-| ----------- | ---------------------------------------------------------------------------------------- | ------------- | 
-| Preparation | - At the end of a daily meeting, suggest a meeting with the stakeholders along with the  |               | 
-|             |   points you would like to discuss.                                                      |               |
-|             | - Ask the other members if they agree with the meeting with the stakeholders and if they |               |
-|             |   have any point that they want to discuss with it (It is necessary to take notes of the |               |
-|             |   team's suggestions).                                                                   |               |
-|             |   - In the event that the meeting is not considered necessary, it may be suggested again |               |
-|             |     at the next daily meeting.                                                           |               |
-|             | - Establish a date, a place and a time with the work team.                               |               |
-| ----------- | ---------------------------------------------------------------------------------------- | ------------- |
-| Contact     | - Contact the stakeholders to schedule the meeting with the date, time and place         |               |
-|             |   established in the previous phase                                                      | Product Owner |
-|             |   -  
-|             | - Once the meeting is accepted, inform the members of the work team about it             |               |  
-| ----------- | ---------------------------------------------------------------------------------------- | ------------- |
-| Feedback    | - Answer accurately the following questions:                                             | Work team     |
-|             |     * What I did yesterday?                                                              |               |
-|             |     * What am I going to do today?                                                       |               |
-|             |     * In case you have not finished your activity the day before, what blockade          |               |
-|             |       prevented you from doing so?                                                       |               |
-|             | - Register those responsible for each activity of the day in the earned value plan       | Team lead    |
-|             | - Record the blockage and assign another colleague to help solve it                      | Team lead    |
-| ----------- | ---------------------------------------------------------------------------------------- | ------------ |
-| Evaluation  | - Expose the project status graphs, and analyze the feasibility of the current way of    | Team lead    |
-|             |   working, the graphs are:                                                               |              |
-|             |     * CPI and SPI trends                                                                 |              |
-|             |     * Daily meeting time                                                                 |              |
-| ----------- | ---------------------------------------------------------------------------------------- | ------------ |
-| Reset       | - In case the project does not go according to plan, the earned value plan should be     | Team lead    |
-|             |   adjusted.                                                                              |              |
-| ----------- | ---------------------------------------------------------------------------------------- | ------------ |
-| Continuous  | - Based on the graphs from the previous phase, each member can provide some idea on how  | Work team    |
-| improvement |   to improve performance                                                                 |              |
-|             | - Record improvement proposals                                                           | Team lead    |
-|             | - Question the usefulness of the value propositions, if they are considered optimal,     | Team lead    | 
-|             |   they should be presented at the next meeting                                           |              | 
-| ----------- | ---------------------------------------------------------------------------------------- | ------------ |
-| Closing     | - The coordination meeting is concluded and if the team goes according to plan,          | Team lead    | 
-|             |   congratulate the members for their good performance                                    |              | 
-| ----------- | ---------------------------------------------------------------------------------------- | ------------ |
+| Phase        | Description                                                                              | Responsibles  | 
+| ------------ | ---------------------------------------------------------------------------------------- | ------------- | 
+| Preparation  | - Convert the situation to be treated into points to simplify its management             | Product Owner |
+|              | - It is suggested to prepare a presentation to facilitate the direction of the meeting.  | Work team     |
+|              |   Preferably handle the points from general to particular                                |               |  
+| ------------ | ---------------------------------------------------------------------------------------- | ------------- |
+| Contact      | - Contact stakeholders to schedule meeting with date, time and location                  | Product Owner |
+|              | - Once the meeting is accepted, inform the members of the work team about it             | Product Owner |  
+|              | - Assign a team member to take minutes                                                   | Work team     |
+| ------------ | ---------------------------------------------------------------------------------------- | ------------- |
+| Presentation | - Send the link for the presentation at least 5 minutes before, in any case, access the  | Product Owner |
+|              |   link provided by the stakeholder                                                       |               |
+|              | - Greet the stakeholder                                                                  | Work team     |
+|              | - Explain the purpose of the meeting and the reason why it could not be held by message  | Product Owner |
+|              | - Start the meeting, if you have a presentation, show it to the stakeholder              | Product Owner |
+| ------------ | ---------------------------------------------------------------------------------------- | ------------- |
+| Feedback     | - Ask the stakeholder if they have any questions or feedback regarding the presentation  | Product Owner |
+|              | - Thank the stakeholder for attending and dismiss him                                    | Product Owner |
+|              | - Inform team members that the meeting is over and the minutes are available to find out | Product Owner |
+|              |   about the meeting through the WhatsApp group                                           |               |
+| ------------ | ---------------------------------------------------------------------------------------- | ------------- |
 
 ## Output
 
 - Minutes with the topics discussed at the meeting
+- Suggestions for improvement in the next meetings
 
 ## Versions
 
 | Version | Description      | Responsibles                 | Date       |
 | ------- | ---------------- | ---------------------------- | ---------- |
-| 1.0     | Process creation | Erick Eduardo Avalos Riveros | 23/05/2023 |
+| 1.0     | Process creation | Erick Eduardo Avalos Riveros | 07/07/2023 |
