@@ -19,5 +19,4 @@ Describe what should be the standards to follow to work correctly with github br
 | Version | Description        | Responsibles                     | Date       |
 | ------- | ------------------ | -------------------------------- | ---------- |
 | 1.0     | Standard creation  | Erick Eduardo Avalos Riveros     | 14/04/2023 |
-| ------- | ------------------ | -------------------------------- | ---------- |
 | 1.1     | Standard creation  | Erick Eduardo Avalos Riveros     | 17/04/2023 |

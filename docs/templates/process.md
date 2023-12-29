@@ -21,8 +21,7 @@ Describes what the process input will be
 
 | Phase      | Description                                  | Responsibles                               | 
 | ---------- | -------------------------------------------- | ------------------------------------------ | 
-| Phase name | Describes what should be done in this phase  | List all the responsibles for this phase   |
-| ---------- | -------------------------------------------- | ------------------------------------------ | 
+| Phase name | Describes what should be done in this phase  | List all the responsibles for this phase   | 
 | Phase name | Describes what should be done in this phase  | List all the responsibles for this phase   |
 
 ## Output
@@ -41,5 +40,4 @@ Describe what the outcome of the process will be
 | Version | Description            | Responsibles                     | Date       |
 | ------- | ---------------------- | -------------------------------- | ---------- |
 | 1.0     | Template creation      | Erick Eduardo Avalos Riveros     | 12/04/2023 |
-| ------- | ---------------------- | -------------------------------- | ---------- |
 | 1.1     | Add inputs and outputs | Erick Eduardo Avalos Riveros     | 27/04/2023 |

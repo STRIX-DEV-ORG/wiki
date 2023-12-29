@@ -22,5 +22,4 @@ Establish the rules that STRIXDEV must follow when handling information about th
 | Version | Description                             | Responsibles                               | Date       |
 | ------- | --------------------------------------- | ------------------------------------------ | ---------- |
 | 1.0     | Creation of privacy policy              | Erick Eduardo Avalos Riveros               | 17/04/2023 |
-| ------- | --------------------------------------- | ------------------------------------------ | ---------- |
 | 1.1     | Remove a clause                         | Erick Eduardo Avalos Riveros               | 27/04/2023 |
