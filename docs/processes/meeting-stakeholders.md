@@ -1,4 +1,4 @@
-# PR - Processes meeting with stakeholders
+# PR - Meeting with stakeholders
 
 ## Objective
 

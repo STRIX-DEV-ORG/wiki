@@ -1,4 +1,4 @@
-# PR - Process First contact
+# PR - First contact
 
 ## Objective
 

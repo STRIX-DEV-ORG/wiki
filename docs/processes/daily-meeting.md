@@ -1,4 +1,4 @@
-# PR - Processes daily meeting
+# PR - Daily meeting
 
 ## Objective
 
@@ -12,16 +12,16 @@
 
 | Phase       | Description                                                                              | Responsibles    |
 | ----------- | ---------------------------------------------------------------------------------------- | --------------- |
-| Preparation | - Send a message five minutes before the start of the daily meeting, requesting to confirm your attendance. | Project manager |
+| Preparation | - Send a message five minutes before the start of the daily meeting, requesting to confirm the attendance. | Project manager |
 |             | - Join the General voice channel on maneroto's server.                                    | Work team       |
 |             | - Present the earned value plan to collaborators.                                         | Project manager |
 |             | - Establish a timer of 10 minutes, in which the daily coordination meeting must conclude. | Project manager |
 | Feedback    | - Answer accurately the following questions:                                             | Work team       |
-|             |     * What I did yesterday?                                                              |                 |
-|             |     * What am I going to do today?                                                       |                 |
-|             |     * In case you have not finished your activity the day before, what blockade prevented you from doing so? | |
+|             |     * What I did before the current daily meeting?                                                              |                 |
+|             |     * What am I going to do after this daily meeting ends?                                                       |                 |
+|             |     * In case you have not finished your activity before the meeting, what blockade prevented me from doing so? | |
 |             | - Register those responsible for each activity of the day in the earned value plan.       | Project manager |
-|             | - Record the blockage and assign another colleague to help solve it.                      | Project manager |
+|             | - Record the blockage and assign another colleague to help solve it if applies.                      | Project manager |
 | Evaluation  | - Expose the project status graphs, and analyze the feasibility of the current way of working, the graphs are: | Project manager |
 |             |*CPI and SPI trends.                                                                   |                 |
 |             |*Daily meeting time.                                                                  |                 |

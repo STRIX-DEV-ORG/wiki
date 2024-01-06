@@ -1,8 +1,13 @@
-# GUI - Github branches
+---
+description: How to name yor branches
+tags: [github, git-branch]
+---
+
+# STD - Git branch naming
 
 ## Objective
 
-Understand the structure needed to name a github branch to make it easier to identify your target.
+Understand the structure needed to name a Git branch to make it easier to identify your target.
 
 ## Content
 
@@ -51,6 +56,7 @@ b/login
 
 ## Versions
 
-| Version | Description     | Responsibles                     | Date       |
-| ------- | --------------- | -------------------------------- | ---------- |
-| 1.0     | Guide creation  | Erick Eduardo Avalos Riveros     | 14/04/2023 |
+| Version | Description                   | Responsibles                     | Date       |
+|---------|-------------------------------|----------------------------------|------------|
+| 1.0     | Create guide                  | Erick Eduardo Avalos Riveros     | 14/04/2023 |
+| 1.1     | Move from guides to standards | Emmanuel Antonio Ramirez Herrera | 12/12/2023 |
