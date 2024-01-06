@@ -1,0 +1,251 @@
+---
+description: How to deploy a Strapi project
+tags: [strapi, nginx, pm2, configuration, deployment, linux]
+---
+
+import CreateUser, {contentTitle as createUserTitle} from './create-debian-user.md';
+import InstallNode, {contentTitle as installNodeTitle} from './install-nodejs-in-debian.md';
+import InstallConfigurePM2, { contentTitle as installConfigurePM2Title } from './install-configure-pm2.md';
+import InstallConfigureNginx, { contentTitle as installConfigureNginxTitle } from './install-configure-nginx.md';
+import AddSSLNginx, { contentTitle as addSSLNginxTitle } from './add-ssl-nginx.md';
+
+# GUI - Strapi deployment by hand
+
+## Objective
+
+To show an efficient way for a Strapi project deployment by hand.
+
+## Content
+
+### Introduction
+
+These steps are based on the Strapi's and Digital Ocean's documentation for deploying a Strapi project by hand in a Droplet, so we are also assuming that you have installed an Ubuntu Linux server that is in its 18.04 version at least. It is also important to mention that for the last modification of this file, we are using Strapi v4.
+
+We hope that you find this guide helpful, as we are trying to centralize all de documentation into a single file, and we are also providing some other findings that have helped to solve several issues for Strapi application deployment by hand.
+
+### Configure the basics in your droplet, hosting, ec2, whatever tool you're using
+
+:::tip Windows OS
+If you are using a Windows Operative system, we recommend you to install OpenSSH services to use from PowerShell
+:::
+
+- Go to your service provider panel, create an ssh access door and access it from your computer by using `ssh [username]@[ip-address]` and your password/ssh key
+- Create a non-root user, and log into it:
+
+<details>
+  <summary>{createUserTitle}</summary>
+  <CreateUser />
+</details>
+
+- Add some protection rules with basic firewall configuration
+
+```bash
+sudo ufw allow OpenSSH # Allow SSH secure communication
+sudo ufw enable # Make the previous rule take effect
+sudo ufw status # Make sure OpenSSH is listed and Allowed
+```
+
+- Install nodejs and make sure it has execution privileges for all your users
+<details>
+  <summary>{installNodeTitle}</summary>
+  <InstallNode />
+</details>
+
+- Make sure you have git installed, otherwise, install it by using `sudo apt install git`
+
+### Database creation
+
+:::tip DBMS
+As several users recommend using PosgreSQL, we are going to stick to that configuration, if you ever need to use any other Database Management System, we encorage you to find the right documentation, test it and add your learnings to the wiki and link it to this document
+:::
+
+We are going to install PostgreSQL, modify the default user's password and create a database, don't forget to keep the database port, database name, user name and user's password
+
+```bash
+sudo apt update # Grant you are using most recent packages
+sudo apt install postgresql postgresql-contrib # Install postgresql packages
+
+sudo systemctl start postgresql.service # Start postgresql service
+
+sudo -i -u postgres # Log into postgres user (it was created along postgres installation)
+
+psql # Execute postgresql
+
+# Change postgres user password
+postgres=# ALTER USER postgres PASSWORD 'new password';
+
+# Create the database
+postgres=# createdb dbName
+```
+
+### Local/server repo configurations
+
+:::warning Misconfigurations
+
+Make sure you read everything here carefully, as some misconfigurations may result in several hours spent making fixes.
+
+:::
+
+- Create the next folder structure inside the `config` folder of your Strapi application: `config/env/production`
+
+- Inside `production` create a file named `database.js`, copy and paste the next snippet:
+
+```js title="./config/env/production/database.js"
+const { parse } = require('pg-connection-string');
+
+module.exports = ({ env }) => {
+  const { host, port, database, user, password } = parse(env('DATABASE_URL'));
+
+  return {
+    connection: {
+      client: 'postgres',
+      connection: {
+        host,
+        port,
+        database,
+        user,
+        password,
+        ssl: { rejectUnauthorized: false },
+      },
+      debug: false,
+    },
+  };
+};
+```
+
+- Make sure you commit and push your changes to the repo
+
+- Make sure you are loged into your server with the non-root user, navigate to `/var/www` and clone your repo by giving it `your domain name` as the name of the folder
+
+```bash
+cd /var/www # Move to folder
+git clone [repo-url] [your-domain-name] # clone your repository
+```
+
+:::tip Use your domain
+It is very important you clone your repo with your domain name as the name of the folder, as it will help you a lot for the following configurations
+:::
+
+- Move to your repo folder, install node dependencies and install node's posgresql dependencies too.
+
+```bash
+cd [your-domain-name] # Move to folder
+npm install # Install project dependencies
+npm install pg --save # Make sure you have installed posgresql dependencies
+```
+
+- Create `.env` file and add the required variables
+
+```bash
+sudo nano .env # Create and open .env file
+
+# Make sure your file has the next variables
+------------
+DATABASE_PORT=value
+DATABASE_NAME=value
+DATABASE_USERNAME=value
+DATABASE_PASSWORD=value
+HOST=value
+PORT=value
+APP_KEYS=value
+API_TOKEN_SALT=value
+ADMIN_JWT_SECRET=value
+JWT_SECRET=value
+DATABASE_URL=value
+# If you are sure that you will always run this on production mode, you can add NODE_ENV=production
+------------
+
+# This file will only be used for the "npm run build" command
+```
+
+- Build the project with `sudo NODE_ENV=production node run build`
+
+### Run your project with PM2
+
+<details>
+  <summary>{installConfigurePM2Title}</summary>
+  <InstallConfigurePM2 />
+</details>
+
+:::warning Check your configuration
+Make sure you have no errors by checking the execution of `pm2 logs` command, the service should be up and running
+:::
+
+### Configure Nginx server
+
+Make sure your folder under `/var/www` path has the right permissions
+
+```bash
+sudho chown -R $USER:$USER /var/www/[your-domain-name] # Assign ownership to current user
+sudo chmod -R 755 /var/www/[your-domain-name] # Change folder permissions
+```
+
+Follow the Nginx guide to create the configuration file and paste the next template, we will modify the template later:
+
+<details>
+  <summary>{installConfigureNginxTitle}</summary>
+  <InstallConfigureNginx />
+</details>
+
+```nginx title="/etc/nginx/sites-available/[your-domain-name]"
+server {
+  listen 80;
+  listen [::]:80;
+
+  root /var/www/[your-domain-name];
+  index index.html index.htm index.nginx-debian.html;
+
+  server_name [your-domain-name];
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+}
+```
+
+:::warning Test your configurations
+Make sure you've tested your config files and restarted the nginx service.
+:::
+
+### Add SSL certificate
+
+Follow the SSL certificate installation over Nginx guide.
+
+<details>
+  <summary>{addSSLNginxTitle}</summary>
+  <AddSSLNginx />
+</details>
+
+Modify once more the Nginx config file by using `sudo nano /etc/nginx/sites-available/[your-domain-name]`. In the first 'server' entry you see, you will find some certbot related configs right under 'server_name' line and above 'listen [::]443 ssl...'. Paste the next code right between those lines and make sure everything else remains the same.
+
+```nginx title="/etc/nginx/sites-available/[your-domain-name]"
+ location / {
+    proxy_pass http://[your-domain-name]:1337;
+    proxy_http_version 1.1;
+    proxy_set_header X-Forwarded-Host $host;
+    proxy_set_header X-Forwarded-Server $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Host $http_host;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+    proxy_pass_request_headers on;
+}
+```
+
+:::tip Rename values
+Make sure that every 'server_name' and '$host' mention has your domain name as a value and that the root remains being '/var/www/[your-domain-name]'
+:::
+
+Check that all the configurations are ok with `sudo nginx -t` and restart the nginx service with `sudo systemctl restart nginx`.
+
+### Furthermore
+
+If you have followed all the previous steps and you still have some errors, please try to do it once again from the beginning, if you still have troubles, contact a teammate, and if both of you can't find a way to solve it, then you need to report this to the team.
+
+## Versions
+
+| Version | Description    | Responsibles                     | Date       |
+| ------- | -------------- | -------------------------------- | ---------- |
+| 1.0     | Guide creation | Emmanuel Antonio Ramírez Herrera | 26/04/2023 |

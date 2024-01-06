@@ -1,8 +1,13 @@
-# GUI - How to do correct git merge
+---
+description: Make a correct git merging
+tags: [github]
+---
+
+# GUI - Correct Git merging
 
 ## Objective
 
-Show Strixdev members how to use the merge command without compromising parent branches
+Show STRIXDEV members how to use the merge command without compromising parent branches
 
 ## Content
 
@@ -12,18 +17,22 @@ Once the objective of your branch is finished, you should save, comment and uplo
 
 Commands:
 
-- git add -A
-- git commit -m 'Small explanation of what was done'
-- git push
+```git
+git add -A
+git commit -m 'Small explanation of what was done'
+git push
+```
   
 ### Step 2 - Verify that the develop branch is up to date
 
-You must go back to the develop branch and make sure that it has not undergone any updates for the moment.
+Follow the [git branch model standards](/standards/git-branch-model.md) by going back to the develop branch and making sure that it has not undergone any updates for the moment.
 
 Commands:
 
-- git checkout develop
-- git pull
+```git
+git checkout develop
+git pull
+```
 
 ### Step 3 - Do the merge and solve conflicts
 
