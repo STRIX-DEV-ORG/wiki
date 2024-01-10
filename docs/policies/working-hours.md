@@ -32,4 +32,4 @@ To establish the standards and procedures to regulate the working hours of the S
 | Version | Description         | Responsibles                     | Date       |
 |---------|---------------------|----------------------------------|------------|
 | 1.0     | Policy creation     | Emmanuel Antonio Ramírez Herrera | 12/04/2023 |
-| 1.0     | Modify some wording | Emmanuel Antonio Ramírez Herrera | 20/12/2023 |
+| 1.1     | Modify some wording | Emmanuel Antonio Ramírez Herrera | 20/12/2023 |

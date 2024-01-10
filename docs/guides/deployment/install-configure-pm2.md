@@ -34,11 +34,23 @@ Make sure PM2 is already installed, you can check that by executing: `pm2 --vers
 Then, just execute `pm2 update`.
 
 ### Configuring PM2
+First, we make sure we centralize configuration files under a common folder, for that, we execute:
+
+```bash
+# Navigate to your home directory
+cd ~ 
+# Create a new directory for your configuration files called NodeWebhooks
+mkdir ~/NodeWebhooks 
+# Then navigate to the new directory
+cd ~/NodeWebhooks 
+```
 
 - Initialize PM2, this will create a default configuration file, you need to edit that file:
 ```bash
-pm2 init # Create default ecosystem.config.js file
-sudo nano ecosystem.config.js # Modify the created file
+# Create default ecosystem.config.js file
+pm2 init
+# Modify the created file
+sudo nano ecosystem.config.js
 ```
 
 - Replace the file content with the next lines of code, make sure you place your own values:
@@ -48,19 +60,21 @@ module.exports = {
   apps: [
     {
       name: '[app-or-service-name]',
-      cwd: '/var/www/[your-domain-name]', // Path to the working app directory
-      script: 'npm',
+      // Path to the working app directory, you can replace it entirely
+      cwd: '/var/www/[your-domain-name]', 
+      // You can use your own package manager like npm
+      script: 'yarn',
       args: 'start',
       env: {
         HOST: '[your-domain-name]',
-        PORT: '1337',
+        PORT: '[your-application-port]',
         NODE_ENV: 'production',
-        DATABASE_HOST: 'localhost', // database endpoint
+        DATABASE_HOST: 'localhost',
         DATABASE_PORT: '5432',
-        DATABASE_NAME: 'dbName', // DB name
-        DATABASE_USERNAME: 'postgres', // your username for psql
-        DATABASE_PASSWORD: 'postgres_user_password', // your password for psql
-        DATABASE_URL: 'postgresql://[username]:[password]@[host]:[port]/[dbName]',
+        DATABASE_NAME: 'dbName',
+        DATABASE_USERNAME: 'postgres',
+        DATABASE_PASSWORD: 'postgres_user_password',
+        DATABASE_URL: 'postgresql://[databas-username]:[database-password]@[database-host]:[database-port]/[database-name]',
       },
     },
   ],
@@ -68,9 +82,7 @@ module.exports = {
 ```
 
 :::tip Use your values
-
-Remember you need to modify previous values with yours. All the env variables are just examples, if you don't need any environment variable, just delete them.
-
+Remember you need to modify previous values with yours. All the env variables are just examples, if you don't need any environment variables, just delete them.
 :::
 
 ### Execute your project
@@ -80,13 +92,19 @@ Remember you need to modify previous values with yours. All the env variables ar
 - Save your PM2 configurations for whenever server needs a reboot
 
 ```bash
-pm2 startup systemd # Generate the startup command
+# Generate the startup command
+pm2 startup systemd 
+
 # Copy and paste the command provided by the previous execution
 
 pm2 save # save the current pm2 configuration and state
 ```
 
 - Make sure you have no errors by checking the execution of `pm2 logs` command, the service should be up and running
+
+### Multiple apps with the same configuration file
+
+If you ever require to run multiple applications at the same time with PM2, you can do that by adding other entries to the `apps` array of the `ecosystem.config.js` file that was created under `NodeWebhooks` when you executed `pm2 init`.
 
 ### Debuging PM2
 

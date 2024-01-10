@@ -13,7 +13,7 @@ To create readable, understandable and standarized documents for the STRIXDEV wi
 
 As a member of STRIXDEV you have the ability to modify the wiki, but you need to stick to these standards and rules to do so.
 
-### Writing standards
+### Writing
 
 - Use clear and concise language. Avoid jargon, slang, and colloquialisms.
 - Follow the standard structure given by the corresponding template, if no template is available for the document, create one.
@@ -30,6 +30,7 @@ As a member of STRIXDEV you have the ability to modify the wiki, but you need to
 - Use parallel structure and consistent tense throughout your document. Make sure your verbs agree with your subjects and your pronouns agree with their antecedents.
 - Avoid stereotypes, biases, or offensive terms based on gender, race, ethnicity, religion, disability, etc.
 - Use feedback and suggestions from others to improve your document. Be open to constructive criticism and revision.
+- If the document you are creating requires a placeholder, you can use capital letters or other symbols like dashes, just make sure that it follows your example needs. But if several words are continuous, use kebab case.
 
 ### Naming conventions
 
@@ -74,8 +75,64 @@ tag: [here, you, have, comma, separated, tags]
 ---
 ```
 
+### Modifications
+
+The documents will change over time, but every modification needs to be documented with a version, each version must have a brief description of the changes made, who made those changes and the update date.
+
+If the modifications are small additions or fixes, then you should just add a decimal to the version:
+```md
+| Version | Description               | Responsibles                     | Date       |
+|---------|---------------------------|----------------------------------|------------|
+| 1.0     | Standard creation         | Emmanuel Antonio Ramirez Herrera | 03/01/2024 |
+| 1.1     | Fixed several misspelings | Emmanuel Antonio Ramirez Herrera | 04/01/2024 |
+| 1.1     | Added comments section    | Emmanuel Antonio Ramirez Herrera | 05/01/2024 |
+```
+
+But if the modifications are major changes to the document, go to the next integer version:
+```md
+| Version | Description                                          | Responsibles                     | Date       |
+|---------|------------------------------------------------------|----------------------------------|------------|
+| 1.0     | Standard creation                                    | Emmanuel Antonio Ramirez Herrera | 03/01/2024 |
+| 2.0     | Reworked standards to fit current organization needs | Emmanuel Antonio Ramirez Herrera | 04/01/2024 |
+```
+
+
+### Non-Markdown documents
+
+From time to time you might need to create non-markdown documents, this wiki has no support to render non-markdown documents, so:
+- It is a must to create one markdown document per non-markdown document. 
+- The non-markdown document needs to be placed in the `/static/` directory. 
+- The markdown document needs to describe the contents and objectives of the non-markdown document.
+- The markdown document must provide a download link of the non-markdown document.
+```md title="Download linking with markdown"
+<a target="_blank" href={ require("/non-static-folder-path-to.file").default } download>Your text</a>
+<a target="_blank" href="/static-folder-path-to.file" download>Your text</a>
+``` 
+
+### Linking documents
+
+You will need to link documents between them, but there are 2 ways we link those documents, one would be with a simple link:
+```mdx
+Either with normal markdown syntax
+[text of your link](/some-path)
+Or with html syntax
+<a href="/some-path">text of your link</a>
+```
+And the other one would be with embeded markdowns with mdx "accordions":
+```mdx
+import SomeDocument, { someDocumentTitle } from '/path-to-markdown-file.md';
+
+<details>
+  <summary>{someDocumentTitle}</summary>
+  <SomeDocument />
+</details>
+```
+If your document will only be mentioned as extra reference material, use the simple links, but if the document will be an essential part, use the "accordion" instead.
+
 ## Versions
 
-| Version | Description       | Responsibles                     | Date       |
-|---------|-------------------|----------------------------------|------------|
-| 1.0     | Standard creation | Emmanuel Antonio Ramirez Herrera | 05/01/2024 |
+| Version | Description                                               | Responsibles                     | Date       |
+|---------|-----------------------------------------------------------|----------------------------------|------------|
+| 1.0     | Standard creation                                         | Emmanuel Antonio Ramirez Herrera | 05/01/2024 |
+| 1.1     | Add modifications section                                 | Emmanuel Antonio Ramirez Herrera | 05/01/2024 |
+| 1.2     | Add non-markdown documents and linking documents sections | Emmanuel Antonio Ramirez Herrera | 08/01/2024 |
