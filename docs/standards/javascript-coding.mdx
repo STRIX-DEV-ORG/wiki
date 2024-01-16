@@ -1,3 +1,6 @@
+
+import BasicCoding, {contentTitle as basicCodingTitle} from './basic-coding.md';
+
 # STD - Coding with Javascript
 
 ## Objective
@@ -6,8 +9,14 @@ Describes what practices should be followed in order to code correctly when work
 
 ## Content
 
-It is necessary to review the following standard, if you are already familiar with it you can skip this part.
+:::tip The basics never go out of style
+If it's been a while since you last reviewed the next standard, it's recommended to give it a quick read.   
+:::
 
+<details>
+  <summary>{ basicCodingTitle }</summary>
+  <BasicCoding />
+</details>
 
 
 ### Importing Libraries
@@ -146,6 +155,55 @@ if (true) {
     console.log(y); 
 }
 console.log(x); 
+
+```
+
+- Use the literal syntax for object creation.
+
+```js title="Example"
+
+✅ const item = {};
+
+❌ const item = new Object();
+
+```
+
+- Use array spreads ... to copy arrays.
+
+```js title="Example"
+
+✅ 
+
+const itemsCopy = [...items];
+
+❌ 
+
+const len = items.length;
+const itemsCopy = [];
+let i;
+
+for (i = 0; i < len; i += 1) {
+  itemsCopy[i] = items[i];
+}
+
+```
+
+- Use single quotes '' for strings.
+
+```js title="Example"
+
+✅ const name = 'Capt. Janeway';
+
+❌ const name = "Capt. Janeway";
+❌ const name = `Capt. Janeway`;
+
+const len = items.length;
+const itemsCopy = [];
+let i;
+
+for (i = 0; i < len; i += 1) {
+  itemsCopy[i] = items[i];
+}
 
 ```
 
