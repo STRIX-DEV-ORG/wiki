@@ -1,21 +1,21 @@
-# TMP - Policy
+# TMP - Guide
 
 ## Objective
 
-Create a standarized template for any policy creation.
+Create a standarized template for any guide creation.
 
 ## Content
 
 ```md
-# POL - <Policy title>
+# GUI - <Guide title>
 
 ## Objective
 
-What is this policy intended for?
+What is this guide intended for?
 
 ## Content
 
-Describe all the policy contents, create any section if required by using the correct md or mdx syntax.
+Describe all the Guide contents, create any section if required by using the correct md or mdx syntax.
 
 ## Versions
 
@@ -28,5 +28,4 @@ Describe all the policy contents, create any section if required by using the co
 
 | Version | Description       | Responsibles                     | Date       |
 | ------- | ----------------- | -------------------------------- | ---------- |
-| 1.0     | Template creation | Emmanuel Antonio Ramírez Herrera | 12/04/2023 |
-| 1.1     | Change sintax to syntax | Emmanuel Antonio Ramírez Herrera | 12/12/2023 |
+| 1.0     | Template creation | Emmanuel Antonio Ramírez Herrera | 12/12/2023 |
