@@ -19,9 +19,12 @@ Describe the standards to follow to work correctly with Git branches.
 
 - Before creating or merging a branch, you must verify that you are working on the most up-to-date versions of them by means of a git pull.
 
+- Not a single pull request should stay longer than 7 days, if this happens it must be solved in a daily meeting by merging the changes without revision.
+
 ## Versions
 
 | Version | Description                         | Responsibles                     | Date       |
 |---------|-------------------------------------|----------------------------------|------------|
 | 1.0     | Standard creation                   | Erick Eduardo Avalos Riveros     | 14/04/2023 |
 | 1.1     | Fix some issues and add information | Emmanuel Antonio Ramirez Herrera | 17/04/2023 |
+| 1.2     | Add pull request expiration         | Emmanuel Antonio Ramirez Herrera | 09/01/2024 |

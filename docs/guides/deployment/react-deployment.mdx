@@ -1,0 +1,194 @@
+---
+description: How to deploy a React application
+tags: [react, nginx, configuration, deployment, linux]
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+import CreateUser, {contentTitle as createUserTitle} from './create-debian-user.md';
+import InstallNode, {contentTitle as installNodeTitle} from './install-nodejs-in-debian.md';
+import GitWebhookSetup, {contentTitle as gitWebhookSetupTitle} from '../github/github-webhook-setup.md';
+import InstallConfigureNginx, { contentTitle as installConfigureNginxTitle } from './install-configure-nginx.md';
+import AddSSLNginx, { contentTitle as addSSLNginxTitle } from './add-ssl-nginx.md';
+
+# GUI - React deployment
+
+## Objective
+
+To show an efficient way to deploy a React application.
+
+## Content
+
+### Introduction
+
+STRIXDEV develops several React applications and we needed a to-go documentation on how to do it in a good and efficient way, that's why we are placing our obtained knowledge here, to reproduce good results and not having to remember every single step.
+
+### Configure the basics in your droplet, hosting, ec2, whatever tool you're using
+
+:::tip Windows OS
+If you are using a Windows Operative system, we recommend you to install OpenSSH services to use from PowerShell
+:::
+
+- Go to your service provider panel, create an ssh access door and access it from your computer by using `ssh [username]@[ip-address]` and your password/ssh key
+- Create a non-root user, and log into it:
+
+<details>
+  <summary>{createUserTitle}</summary>
+  <CreateUser />
+</details>
+
+- Add some protection rules with basic firewall configuration
+
+```bash
+# Allow SSH secure communication
+sudo ufw allow OpenSSH
+# Make the previous rule take effect
+sudo ufw enable
+# Make sure OpenSSH is listed and Allowed
+sudo ufw status
+```
+
+- Install nodejs and make sure it has execution privileges for all your users
+
+<details>
+  <summary>{installNodeTitle}</summary>
+  <InstallNode />
+</details>
+
+- Make sure you have git installed, otherwise, install it by using `sudo apt install git`
+
+### Local/server repo configurations
+
+Navigate to the root folder, create a new folder named `GitRepos` and navigate to the created folder. If the folder already exist, just navigate to it:
+```bash
+# Go to root folder
+cd ~
+# Create folder
+mkdir GitRepos
+# Move to created folder
+cd ./GitRepos
+```
+
+Clone your repository and check it was created correctly, take note of the folder name, you are going to use it
+```bash
+# Clone your repository, it may ask for authentication
+git clone [your-git-url]
+# (Optional) List files to check repository name
+ls ./
+```
+
+Create a folder under `/var/www/` and give it your target domain name, if you have no domain name, use the IP address instead.
+```bash
+sudo mkdir /var/www/[your-domain-name]
+```
+
+Create a git webhook to allow continuous integration, use the path to the repository you cloned before and the target domain name, if you have no domain name, use the IP address instead.
+<details>
+  <summary>{gitWebhookSetupTitle}</summary>
+  <GitWebhookSetup />
+</details>
+
+### Configure Nginx server
+
+Make sure your folder under `/var/www` path has the right permissions
+
+```bash
+# Assign ownership to current user
+sudho chown -R $USER:$USER /var/www/[your-domain-name]
+# Change folder permissions
+sudo chmod -R 755 /var/www/[your-domain-name]
+```
+
+Follow the Nginx guide to create the configuration file and paste the corresponding template:
+
+<Tabs>
+  <TabItem value='standard' label='Standard configuration' default>
+    This configuration is useful whe you have a standard React application created with vite or any similar technology.
+    <CodeBlock language="nginx" title="/etc/nginx/sites-available/[your-domain-name]">
+      {`server {
+        # Use your own application port
+        listen 80;
+        listen [::]:80;
+        
+        server_name [your-domain-name];
+        
+        # You can replace the whole direction to match yours
+        root /var/www/[your-domain-name];
+        index index.html index.htm index.nginx-debian.html;
+        
+        location / {
+          try_files $uri $uri/ =404;
+          # If your application is a SPA (Single-page application) use next line instead
+          index index.html;
+        }
+      }`}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value='proxy' label='Proxied configuration'>
+    This configuration is useful when you requiere to add a proxied application, like when working with NextJS.
+    <CodeBlock language="nginx" title="/etc/nginx/sites-available/[your-domain-name]">
+      {`server {
+        # Listen to default http port
+        listen 80;
+        listen [::]:80;
+        
+        server_name [your-domain-name];
+        
+        location / {
+          # Use your own application port
+          proxy_pass http://localhost:3000;
+          proxy_http_version 1.1;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection 'upgrade';
+          proxy_set_header Host $host;
+          proxy_cache_bypass $http_upgrade
+        }
+      }`}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value='backend-proxy' label='Backend proxy'>
+    If you need any backend proxy, then add one of the previous two options and add the next code into your server entry.
+    <CodeBlock language="nginx" title="/etc/nginx/sites-available/[your-domain-name]">
+    {`
+      # Use your own api url
+      location /api/ {
+      # Use your own backend port
+			proxy_pass http://localhost:1337;
+			proxy_http_version 1.1;
+			proxy_set_header Connection '';
+			proxy_set_header Host $host;
+		}`}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+<details>
+  <summary>{installConfigureNginxTitle}</summary>
+  <InstallConfigureNginx />
+</details>
+
+:::warning Test your configurations
+Make sure you've tested your config files and restarted the nginx service.
+:::
+
+### Add SSL certificate
+
+Follow the SSL certificate installation over Nginx guide.
+
+<details>
+  <summary>{addSSLNginxTitle}</summary>
+  <AddSSLNginx />
+</details>
+
+Check that all the configurations are ok with `sudo nginx -t` and restart the nginx service with `sudo systemctl restart nginx`.
+
+### Furthermore
+
+If you have followed all the previous steps and you still have some errors, please try to do it once again from the beginning, if you still have troubles, contact a teammate, and if both of you can't find a way to solve it, then you need to report this to the team.
+
+## Versions
+
+| Version | Description    | Responsibles                     | Date       |
+| ------- | -------------- | -------------------------------- | ---------- |
+| 1.0     | Guide creation | Emmanuel Antonio Ramírez Herrera | 26/04/2023 |

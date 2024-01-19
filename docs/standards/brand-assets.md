@@ -60,4 +60,4 @@ To download the SVG logo file, <a target="_blank" href="/img/logo.svg" download>
 
 | Version | Description       | Responsibles                     | Date       |
 |---------|-------------------|----------------------------------|------------|
-| 1.0     | Standard creation | Emmanuel Antonio Ramirez Herrera | 04/01/2023 |
+| 1.0     | Standard creation | Emmanuel Antonio Ramirez Herrera | 04/01/2024 |

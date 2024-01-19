@@ -40,12 +40,16 @@ If you are using a Windows Operative system, we recommend you to install OpenSSH
 - Add some protection rules with basic firewall configuration
 
 ```bash
-sudo ufw allow OpenSSH # Allow SSH secure communication
-sudo ufw enable # Make the previous rule take effect
-sudo ufw status # Make sure OpenSSH is listed and Allowed
+# Allow SSH secure communication
+sudo ufw allow OpenSSH
+# Make the previous rule take effect
+sudo ufw enable
+# Make sure OpenSSH is listed and Allowed
+sudo ufw status
 ```
 
 - Install nodejs and make sure it has execution privileges for all your users
+
 <details>
   <summary>{installNodeTitle}</summary>
   <InstallNode />
@@ -62,14 +66,19 @@ As several users recommend using PosgreSQL, we are going to stick to that config
 We are going to install PostgreSQL, modify the default user's password and create a database, don't forget to keep the database port, database name, user name and user's password
 
 ```bash
-sudo apt update # Grant you are using most recent packages
-sudo apt install postgresql postgresql-contrib # Install postgresql packages
+# Grant you are using most recent packages
+sudo apt update
+# Install postgresql packages
+sudo apt install postgresql postgresql-contrib
 
-sudo systemctl start postgresql.service # Start postgresql service
+# Start postgresql service
+sudo systemctl start postgresql.service
 
-sudo -i -u postgres # Log into postgres user (it was created along postgres installation)
+# Log into postgres user (it was created along postgres installation)
+sudo -i -u postgres
 
-psql # Execute postgresql
+# Execute postgresql
+psql 
 
 # Change postgres user password
 postgres=# ALTER USER postgres PASSWORD 'new password';
@@ -118,8 +127,10 @@ module.exports = ({ env }) => {
 - Make sure you are loged into your server with the non-root user, navigate to `/var/www` and clone your repo by giving it `your domain name` as the name of the folder
 
 ```bash
-cd /var/www # Move to folder
-git clone [repo-url] [your-domain-name] # clone your repository
+# Move to folder
+cd /var/www
+# clone your repository
+git clone [repo-url] [your-domain-name]
 ```
 
 :::tip Use your domain
@@ -129,15 +140,19 @@ It is very important you clone your repo with your domain name as the name of th
 - Move to your repo folder, install node dependencies and install node's posgresql dependencies too.
 
 ```bash
-cd [your-domain-name] # Move to folder
-npm install # Install project dependencies
-npm install pg --save # Make sure you have installed posgresql dependencies
+# Move to folder
+cd [your-domain-name]
+# Install project dependencies
+npm install
+# Make sure you have installed posgresql dependencies
+npm install pg --save
 ```
 
 - Create `.env` file and add the required variables
 
 ```bash
-sudo nano .env # Create and open .env file
+# Create and open .env file
+sudo nano .env
 
 # Make sure your file has the next variables
 ------------
@@ -176,32 +191,38 @@ Make sure you have no errors by checking the execution of `pm2 logs` command, th
 Make sure your folder under `/var/www` path has the right permissions
 
 ```bash
-sudho chown -R $USER:$USER /var/www/[your-domain-name] # Assign ownership to current user
-sudo chmod -R 755 /var/www/[your-domain-name] # Change folder permissions
+# Assign ownership to current user
+sudho chown -R $USER:$USER /var/www/[your-domain-name]
+# Change folder permissions
+sudo chmod -R 755 /var/www/[your-domain-name]
 ```
 
 Follow the Nginx guide to create the configuration file and paste the next template, we will modify the template later:
 
-<details>
-  <summary>{installConfigureNginxTitle}</summary>
-  <InstallConfigureNginx />
-</details>
-
 ```nginx title="/etc/nginx/sites-available/[your-domain-name]"
 server {
+  # Use your own application port
   listen 80;
   listen [::]:80;
 
+  server_name [your-domain-name];
+
+  # You can replace the whole direction to match yours
   root /var/www/[your-domain-name];
   index index.html index.htm index.nginx-debian.html;
-
-  server_name [your-domain-name];
 
   location / {
     try_files $uri $uri/ =404;
   }
 }
 ```
+
+<details>
+  <summary>{installConfigureNginxTitle}</summary>
+  <InstallConfigureNginx />
+</details>
+
+
 
 :::warning Test your configurations
 Make sure you've tested your config files and restarted the nginx service.
