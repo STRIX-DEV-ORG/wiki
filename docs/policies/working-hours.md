@@ -1,31 +1,39 @@
-# POL - Working hours
+
+# POL - Working tasks
 
 ## Objective
 
-To establish the standards and procedures to regulate the working hours of the STRIXDEV collaborators.
+To establish standards and procedures to regulate the work tasks of the STRIXDEV collaborators.
 
 ## Content
 
 ### General Principles
 
-- Collaborators must comply with the weekly working hours established.
-- Collaborators must register their working hours and activities carried out in an accurate and transparent manner, using tools suggested or authorized by STRIXDEV, and attaching the evidence that support their statement.
-- The assigned Team Lead must verify that the hours and activities declared are consistent with the objectives or goals of the project or activity assigned, as well as with the evidence presented.
-- STRIXDEV will measure the performance of collaborators according to a defined criteria and indicators, based on the hours and activities registered, as well as recognize and reward good performance.
+- Collaborators are encouraged to fulfill the tasks they select, as their income is linked to task completion.
 
-### Working with a team
+-  Collaborators must register their tasks and the time spent on them accurately and transparently, using tools suggested or authorized by STRIXDEV. This won't have any impact on of any kind, but will be usefull for future plannings and stimations.
 
-- All STRIXDEV collaborators must respect their collegues time and schedule, avoiding being late, leaving early or being absent without justification, this applies for any appointment or activity that has been previously scheduled.
-- Collaborators can request permits or licenses for personal, medical or legal reasons, following the procedure established by STRIXDEV.
-- Although the schedule is open, the work team can plan the weekly hours that best suit their needs and preferences, as long as the objectives or goals of the project or dedicated activity are met.
-- Not a single team member should work extra hours; if this happens, you must communicate this event to your Team Lead so the working plan is modified.
+- The assigned Team Lead must verify that the tasks and time declared are consistent with the objectives or goals of the project or activity assigned, as well as with the evidence presented.
 
-### Reporting hours and activities
+- Team members can perform extra tasks, keeping in mind that each member has a predetermined amount of money allocated per period. If there is leftover money from that budget, the Team Lead will decide whether to pay for the extra tasks in that spring.
 
-- The minimum register time for any activity is 15 minutes.
-- If the activity that has been realized is less than 15 minutes long, the collaborator must accumulate this activity with other ones, so it matches the minimum register time.
-- If there is any doubt about what activities can be reported as part of your time report, you must contact your Team Lead.
-- If there is any doubt about the evidence you can provide to support your working hours, you must contact your Team Lead.
+### Working with a Team
+
+- All STRIXDEV collaborators must respect their colleagues' time and schedule, avoiding lateness, early departure, or being absent without justification. This applies to any appointment or activity that has been previously scheduled.
+
+- Collaborators can request permits or licenses for personal, medical, or legal reasons, following the procedure established by STRIXDEV.
+
+- Although the schedule is open, the work team can plan the weekly tasks and hours that best suit their needs and preferences, as long as the objectives or goals of the project or dedicated activity are met.
+
+### Reporting tasks and activities
+
+- The minimum time for registering any task is 30 minutes.
+
+- If the task that has been completed is less than 30 minutes, the collaborator must accumulate this task with others to match the minimum registration time.
+
+- If there is any doubt about what tasks can be reported as part of your task report, you must contact your Team Lead.
+
+- If there is any doubt about the evidence you can provide to support your working tasks, you must contact your Team Lead.
 
 ## Versions
 
@@ -33,3 +41,4 @@ To establish the standards and procedures to regulate the working hours of the S
 |---------|---------------------|----------------------------------|------------|
 | 1.0     | Policy creation     | Emmanuel Antonio Ramírez Herrera | 12/04/2023 |
 | 1.1     | Modify some wording | Emmanuel Antonio Ramírez Herrera | 20/12/2023 |
+| 1.2     | Update to tasks     | Raziel Baruc Hernández Ramírez   | 24/01/2024 |
